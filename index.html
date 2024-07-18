@@ -22,11 +22,6 @@ grid-template-rows: 1fr 3fr repeat(5, 2fr);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
 }
-.parent > *{
-
-border:1px solid black;
-
-}
 .div1 { grid-area: 1 / 1 / 2 / 2; }
 .div2 { grid-area: 2 / 1 / 3 / 2; }
 .div3 { grid-area: 3 / 1 / 4 / 2; }
@@ -36,25 +31,29 @@ border:1px solid black;
 .div7 { grid-area: 7 / 1 / 8 / 2; }
 
 .Homepage {
-/*
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-grid-template-rows: 1fr;
-grid-column-gap: 0px;
-grid-row-gap: 0px;*/
-background:#30333a;
-	display: flex;
-  justify-content:space-around;
-  align-content:space-around;
-}
-.Homepage > * {
-display:flex;
+
+background:#30333a;	
+display: flex;
+justify-content:center;  
 align-items:center;
+}
+.body-Homepage{
 color:white;
+width:50%;
+display: flex;
+justify-content:space-around;
+
+}
+
+.body-Homepage > *{
+
+width:15px;
+font-size:10px;
+
 }
 
 
-.About {
+.Intro {
 background:#3c3e41;
 display: grid;
 grid-template-columns: repeat(2, 1fr);
@@ -84,15 +83,6 @@ font-weight:bold;
 color:red; 
 
 }
-.intro{
-
-
-
-}
-
-.profession{
-
-}
 
 .logo{
 
@@ -103,6 +93,31 @@ height: auto;
 }
 
 
+
+
+.About{
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+background-color:#30333a;
+
+}
+
+.title{
+width:75%;
+
+}
+h2{ 
+color:white;
+display:flex;
+align-items:start;
+}
+
+
+.body-About {
+word-wrap:break-word;
+}
 
 
 @media (min-width: 768px) {
@@ -124,21 +139,29 @@ height: auto;
     font-size: 7px;
 
   }
+  .body-Homepage > *{
+
+  font-size:5px;
+
+ }
 }
     </style>
 </head>
 <body>
 <div class="parent">
  <div class="div1 Homepage">
+  <div class="body-Homepage">
 		<div class="home">Home </div>
 		<div class="about">About </div>
 		<div class="porto">Portofolio </div>
 		<div class="contact">Contact </div>
+  </div>
  </div>
- <div class="div2 About ">
+
+ <div class="div2 Intro">
   <div class="desc">
    <div class="databook">
-    <div class="intro" >
+    <div >
 	   I'M <span class="name">Ridho Nur Arifini</span> 
     </div>
     <div class="profession" > 
@@ -146,11 +169,23 @@ height: auto;
     </div>
    </div>	
   </div>
+
   <div class="photo">
    <img class="logo" src="static/logo.png" alt="Logo PNG"> 
   </div>
+
  </div>
- <div class="div3">3 </div>
+
+ <div class="div3 About  ">
+  <div class="title">
+   <div>
+      <h2>About</h2>
+   </div>
+   <div class="body-About">
+    <p>Aboutbieiejejejsdjdidisisjsjsjjsjsjjsjsjsjjsjs</p>
+   </div>	
+  </div>
+ </div>
  <div class="div4">4 </div>
  <div class="div5">5 </div>
  <div class="div6">6 </div>
