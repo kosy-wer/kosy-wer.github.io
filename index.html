@@ -63,30 +63,68 @@ grid-column-gap: 0px;
 grid-row-gap: 0px;
 }
 
-.About > * {
-display:flex;
-justify-content:center;
-align-content:center;
+
+.desc { 
+font-family: Arial, sans-serif; 
 color:white;
+display:flex;  
+align-items:center;
+justify-content:center;
+flex-direction: column;
+}
+.databook{
+
+width:50%;
+
 
 }
-.desc { 
-background:#3c3e41;          
-font-size: 20px;
+.name{
 
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction: column;
+font-weight:bold;
+color:red; 
+
+}
+.intro{
+
+
+
+}
+
+.profession{
+
 }
 
 .logo{
+
 object-fit: contain;
 max-width: 100%;
-            height: auto; /* Menjaga aspek rasio gambar */
+height: auto;
 
 }
 
+
+
+
+@media (min-width: 768px) {
+  .name{
+    font-size: 1.4em;
+  }
+  .databook{
+    font-size: 20px;
+
+  }
+}
+
+/* Ukuran font untuk mobile (lebih kecil dari 768px) */
+@media (max-width: 767px) {
+  .name {
+    font-size: 9px;
+  }
+  .databook{
+    font-size: 7px;
+
+  }
+}
     </style>
 </head>
 <body>
@@ -99,13 +137,14 @@ max-width: 100%;
  </div>
  <div class="div2 About ">
   <div class="desc">
-   <div>
-	   I'M <span style="font-weight:bold;color:red; font-size:1em;">Ridho Nur Arifini</span> 
-   </div>
-   <div> 
+   <div class="databook">
+    <div class="intro" >
+	   I'M <span class="name">Ridho Nur Arifini</span> 
+    </div>
+    <div class="profession" > 
 	  Back-End Developer
-   </div>
-	
+    </div>
+   </div>	
   </div>
   <div class="photo">
    <img class="logo" src="static/logo.png" alt="Logo PNG"> 
