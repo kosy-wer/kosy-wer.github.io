@@ -53,7 +53,7 @@ align-items:center;
 }
 .body-Homepage{
 margin:5px;
-width:50%;
+width:75%;
 display: flex;
 justify-content:space-around;
 
@@ -161,7 +161,7 @@ word-wrap:break-word;
   }
   .body-Homepage {
 
-   font-size:10px;
+   font-size:7px;
 
  }
 
@@ -246,11 +246,36 @@ flex-direction: column;
 
 }
 
-.project{
-object-fit: cover;
+.Project{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+max-width:100%;
+max-height:100%;
+background:#3c3e41;
+border-radius:15px;
+}
+.Project > div {
+display:flex;
+align-items:center;
+flex-direction: column;
 
 }
-    </style>
+.Project img{
+
+max-width:100%;
+max-height:100%;
+
+}
+
+
+.icon-Project { grid-area: 1 / 1 / 3 / 3; }
+.back-Project { grid-area: 3 / 1 / 4 / 2; }
+.front-Project { grid-area: 3 / 2 / 4 / 3; }
+    
+</style>
 </head>
 <body>
 <div class="parent">
@@ -318,9 +343,20 @@ I have experience in backend development, specializing in building REST APIs for
    <h2> Portofolio</h2>
    </div>
    <div class="list-Porto"> 
-     <img class="project " src="static/css.png" alt="Logo PNG">   
-     <img class="project " src="static/css.png" alt="Logo PNG">   
-     <img class="project " src="static/css.png" alt="Logo PNG">   
+    <div class="Project"> 
+     <div class="icon-Project">
+      <h2> Rest-Api</h2>
+      <img class="" src="static/rest-api.png" alt="Logo PNG">
+     </div>   
+     <div class="back-Project"> 
+      <h2> Back-End</h2>
+      <img class="" src="static/go.png" alt="Logo PNG">
+     </div>   
+     <div class="front-Project">
+      <h2> Front-End</h2>
+      <img class="" src="static/js.png" alt="Logo PNG">
+     </div>   
+    </div>   
    </div>
   </div>
  </div>
