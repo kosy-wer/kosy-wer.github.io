@@ -256,6 +256,7 @@ max-width:100%;
 max-height:100%;
 background:#3c3e41;
 border-radius:15px;
+margin-bottom:15px;
 }
 .Project > div {
 display:flex;
@@ -273,8 +274,55 @@ max-height:100%;
 
 .icon-Project { grid-area: 1 / 1 / 3 / 3; }
 .back-Project { grid-area: 3 / 1 / 4 / 2; }
-.front-Project { grid-area: 3 / 2 / 4 / 3; }
+.front-Project { grid-area: 3 / 2 / 4 / 3; 
+}
+.front-Project h2{
+
+
+}
+.front-Project img{
     
+}
+.Contact{
+display:flex;
+align-items:center;
+justify-content:center;
+background:#30333a;	
+flex-direction: column;
+}
+.body-Contact{
+margin-bottom:15px;	
+display:flex;   
+justify-content:center;
+align-items:center;
+
+}
+.content-Contact{
+width:50%;
+}
+.list-Contact{
+
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.title-Contact{
+display:flex;                                                   
+justify-content:center;
+
+
+}
+.body-Contact img:nth-of-type(1){ grid-area: 1 / 1 / 2 / 2; }
+.body-Contact img:nth-of-type(2){ grid-area: 1 / 3 / 2 / 4; }
+.body-Contact img:nth-of-type(3){ grid-area: 2 / 2 / 3 / 3; }
+
+.Contact img{
+max-width:100%;
+max-height:100%;                                                                                                                
+}
 </style>
 </head>
 <body>
@@ -360,8 +408,22 @@ I have experience in backend development, specializing in building REST APIs for
    </div>
   </div>
  </div>
- <div class="div6">6 </div>
- <div class="div7">7 </div>
+ <div class="div6 Contact ">
+  <div class="title-Contact">
+      <h2> Contact</h2>
+  </div>
+  <div class="body-Contact">
+   <div class="content-Contact">
+    <div class="list-Contact">
+      <img class="" src="static/whatsapp.png" alt="Logo PNG">
+      <img class="" src="static/telephone.png" alt="Logo PNG">
+      <img class="" src="static/email.png" alt="Logo PNG">
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="div7">ok </div>
 </div>
 </body>
 </html>
