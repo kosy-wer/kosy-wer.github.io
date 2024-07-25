@@ -323,6 +323,44 @@ justify-content:center;
 max-width:100%;
 max-height:100%;                                                                                                                
 }
+.Sosmed{
+
+background-color:#30333a;
+
+}
+
+.social-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+max-width:100%;
+  margin: 20px 0;
+}
+
+.social-icons {
+max-width:40%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons img {
+max-width:35%;
+}
+
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #d4af37;
+}
+
+.thanks {
+	display: flex;                                                        justify-content: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
 </style>
 </head>
 <body>
@@ -414,17 +452,51 @@ I have experience in backend development, specializing in building REST APIs for
   </div>
   <div class="body-Contact">
    <div class="content-Contact">
+
     <div class="list-Contact">
-      <img class="" src="static/whatsapp.png" alt="Logo PNG">
-      <img class="" src="static/telephone.png" alt="Logo PNG">
-      <img class="" src="static/email.png" alt="Logo PNG">
+      <img id="whatsapp" src="static/whatsapp.png" alt="Logo PNG">
+      <img id="telephone" src="static/telephone.png" alt="Logo PNG">
+      <img id="email" src="static/email.png" alt="Logo PNG">
     </div>
    </div>
   </div>
  </div>
 
- <div class="div7">ok </div>
+ <div class="div7 Sosmed">
+  <div class="social-container">
+  <div class="line"></div>
+  <div class="social-icons">
+      <img id="linkedin" src="static/linkedin.png" alt="Logo PNG">
+      <img id="facebook" src="static/facebook.png" alt="Logo PNG">
+      <img id="github" src="static/github.png" alt="Logo PNG">
+  </div>
+  <div class="line"></div>
 </div>
+<p class="thanks">"Thanks for Scrolling"</p>
+ </div>
+</div>
+<script>
+ document.getElementById('whatsapp').onclick = function() {
+  window.location.href = 'https://wa.me/6285648403583';
+};
+
+document.getElementById('telephone').onclick = function() {
+  window.location.href = 'tel:+6285648403583';
+};
+
+document.getElementById('email').onclick = function() {
+  const email = 'ridhonurarifin587@gmail.com';
+  const subject = 'Subject Here';
+  const body = 'Body of the email here';
+  window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+};
+document.getElementById('github').onclick = function() {
+  window.location.href = 'https://github.com/kosy-wer';
+}; 
+document.getElementById('facebook').onclick = function() {
+  window.location.href = 'https://www.facebook.com/profile.php?id=100089295600310';
+}; 
+</script>
 </body>
 </html>
 
