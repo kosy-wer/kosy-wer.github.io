@@ -245,44 +245,110 @@ align-content:center;
 flex-direction: column;
 
 }
-
-.Project{
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(3, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-max-width:100%;
-max-height:100%;
-background:#3c3e41;
-border-radius:15px;
-margin-bottom:15px;
+.Project {
+  display: flex;
+  flex-direction:column;
+  background: #3c3e41;
+  border-radius: 15px;
+  padding: 15px;
 }
-.Project > div {
-display:flex;
-align-items:center;
-flex-direction: column;
+
+.project-stack {
+  display: flex;
+  flex-direction:row;
 
 }
-.Project img{
 
-max-width:100%;
-max-height:100%;
+/* Kolom 2: Button */
+.project-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:250px;
 
 }
 
 
-.icon-Project { grid-area: 1 / 1 / 3 / 3; }
-.back-Project { grid-area: 3 / 1 / 4 / 2; }
-.front-Project { grid-area: 3 / 2 / 4 / 3; 
+.myButton {
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width:300px;
+  position: relative;
+  user-select: none;
 }
-.front-Project h2{
 
+.myButton:visited,
+.myButton:focus,
+.myButton:active {
+  background: none;   
+  color: inherit;     
+  outline: none;      
+  -webkit-tap-highlight-color: transparent;
+}
 
+.icon-btn {
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
 }
-.front-Project img{
-    
+.myButton::after {
+  content: "➜";
+  font-size: 50px;
+  color: white;     
+  margin-left: 10px;
 }
+.tooltip {
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease-in-out;
+      font-size: 20px;
+      z-index: 10;
+   
+}
+.tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+    }
+
+    .myButton:hover .tooltip,
+    .myButton.show-tooltip .tooltip {
+      opacity: 1;
+}
+.project-stack .back-end,
+.project-stack .front-end,
+.project-icon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.project-stack .back-end img,
+.project-stack .front-end img  {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+} 
 .Contact{
 display:flex;
 align-items:center;
@@ -356,29 +422,46 @@ max-width:35%;
 }
 
 .thanks {
-	display: flex;                                                        justify-content: center;
+	display: flex;                                                      
+  justify-content: center;
   margin-top: 20px;
   font-size: 18px;
+}
+.no-copy {
+  user-select: none; 
+}
+.no-link{
+  color: inherit;   
+  text-decoration: none; 
+  cursor: pointer;
 }
 
 </style>
 </head>
-<body>
+<bodyi>
 <div class="parent">
  <div class="div1 Homepage">
   <div class="body-Homepage">
-		<div class="home">Home </div>
-		<div class="about">About </div>
-		<div class="porto">Portofolio </div>
-		<div class="contact">Contact </div>
+		<div class="home no-copy">
+      <a class="no-link" href="#home">Home</a>
+    </div>
+		<div class="about no-copy">
+      <a class="no-link" href="#about">About</a>
+    </div>
+		<div class="porto no-copy">
+      <a class="no-link" href="#porto">Portofolio </a>
+    </div>
+		<div class="contact no-copy">
+      <a class="no-link" href="#contact">Contact </a>
+    </div>
   </div>
  </div>
 
- <div class="div2 Intro">
+ <div id="home" class="div2 Intro">
   <div class="desc">
    <div class="databook">
     <div >
-	   I'M <span class="name">Ridho Nur Arifini</span> 
+	   I'M <span class="name">Ridho Nur Arifin</span> 
     </div>
     <div class="profession" > 
 	  Back-End Developer
@@ -392,7 +475,7 @@ max-width:35%;
 
  </div>
 
- <div class="div3 About  ">
+ <div id="about" class="div3 About  ">
   <div class="Title">
    <div class="body-Title">
       <h2>About</h2>
@@ -423,30 +506,52 @@ I have experience in backend development, specializing in building REST APIs for
   </div>
 
  </div>
- <div class="div5 Porto ">
-  <div class="body-Porto"> 
-   <div class="title-Porto">
-   <h2> Portofolio</h2>
-   </div>
-   <div class="list-Porto"> 
-    <div class="Project"> 
-     <div class="icon-Project">
-      <h2> Rest-Api</h2>
-      <img class="" src="rest-api.png" alt="Logo PNG">
-     </div>   
-     <div class="back-Project"> 
-      <h2> Back-End</h2>
-      <img class="" src="go.png" alt="Logo PNG">
-     </div>   
-     <div class="front-Project">
-      <h2> Front-End</h2>
-      <img class="" src="js.png" alt="Logo PNG">
-     </div>   
-    </div>   
-   </div>
+
+ <div id="porto" class="div5 Porto">
+  <div class="body-Porto">
+    <div class="title-Porto">
+      <h2>Portofolio</h2>
+    </div>
+
+    <div class="list-Porto">
+      <div class="Project">
+        <!-- Kolom 1: Icon -->
+        <div class="project-icon">
+          <h2>Rest-API</h2>
+          <img src="rest-api.png" alt="Logo PNG">
+        </div>
+
+        <!-- Kolom 2: Button -->
+        <div class="project-button">
+         <a href="https://github.com/kosy-wer/rest-api" class="myButton" target="_blank">
+          <img src="github.png" alt="GitHub" class="icon-btn"
+          alt="GitHub">
+    <span class="tooltip">Repository in github</span>
+         </a>
+         <a href="#" class="myButton">
+          <img src="eye.png" alt="View" class="icon-btn eye-icon"
+          alt="GitHub">
+    <span class="tooltip">View Project</span>
+         </a>
+        </div>
+
+        <!-- Kolom 3: Front & Back-End -->
+        <div class="project-stack">
+          <div class="back-end">
+            <h2>Back-End</h2>
+            <img src="go.png" alt="Logo PNG">
+          </div>
+          <div class="front-end">
+            <h2>Front-End</h2>
+            <img src="js.png" alt="Logo PNG">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
- </div>
- <div class="div6 Contact ">
+</div>
+
+ <div id="contact" class="div6 Contact ">
   <div class="title-Contact">
       <h2> Contact</h2>
   </div>
@@ -502,6 +607,26 @@ document.getElementById('linkedin').onclick = function() {
 document.getElementById('facebook').onclick = function() {
   window.location.href = 'https://www.facebook.com/profile.php?id=100089295600310';
 }; 
+const button = document.querySelector('.myButton');
+    let pressTimer;
+
+    button.addEventListener('touchstart', () => {
+      pressTimer = setTimeout(() => {
+        button.classList.add('show-tooltip');
+      }, 100);
+    });
+
+    button.addEventListener('touchend', () => {
+      clearTimeout(pressTimer);
+      setTimeout(() => {
+        button.classList.remove('show-tooltip');
+      }, 200);
+    });
+ document.addEventListener('click', (e) => {
+      if (!button.contains(e.target)) {
+        button.classList.remove('show-tooltip');
+      }
+    });
 </script>
 </body>
 </html>
